@@ -2,6 +2,8 @@ package com.example.xiaojin20135.excelapp;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 import com.example.xiaojin20135.excellib.ExcelBean;
 import com.example.xiaojin20135.excellib.ExcelExportHelper;
@@ -16,7 +18,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+    }
 
+    public void export(View view) {
         String[] titleArr = new String[]{"第一列","第二列","第三列","第四列","第五列","第六列"};
         ArrayList<Map> rowList = new ArrayList<>();
         Map map1 = new HashMap();
@@ -37,8 +41,5 @@ public class MainActivity extends AppCompatActivity {
 
         ExcelBean.EXCEL_BEAN.initData(titleArr,rowList);
         ExcelExportHelper.EXCEL_EXPORT_HELPER.exportToExcelCommon(this,"haha","filename");
-
-
-
     }
 }
